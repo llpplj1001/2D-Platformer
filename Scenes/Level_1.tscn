@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=4 uid="uid://bh5lescmnhpky"]
+
+[ext_resource type="Texture2D" uid="uid://daddmg1hkc27d" path="res://Sprites/Backgrounds/backgroundForest.png" id="1_i63mn"]
+[ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="2_vnunq"]
+[ext_resource type="PackedScene" uid="uid://bet1lx3ktmfgy" path="res://Scenes/player.tscn" id="3_vnunq"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BackgroundForest" type="Sprite2D" parent="."]
+position = Vector2(274, -1)
+texture = ExtResource("1_i63mn")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(112, -32)
+tile_map_data = PackedByteArray("AAAGAAEAAAAAAAEAAAAGAAIAAAAAAAYAAAAGAAMAAAAAAAcAAAD4/wIAAAABAAEAAAD4/wMAAAABAAYAAAD4/wQAAAABAAcAAAD5/wIAAAACAAEAAAD5/wMAAAACAAYAAAD5/wQAAAACAAcAAAD6/wIAAAACAAEAAAD6/wMAAAACAAYAAAD6/wQAAAACAAcAAAD7/wIAAAADAAEAAAD7/wMAAAADAAYAAAD7/wQAAAADAAcAAAAKAAIAAAAAAAEAAAAKAAMAAAAAAAYAAAAKAAQAAAAAAAcAAAAOAAIAAAAAAAEAAAAOAAMAAAAAAAYAAAAOAAQAAAAAAAcAAAASAAEAAAAAAAEAAAASAAIAAAAAAAYAAAASAAMAAAAAAAcAAAABAAAAAAADAAEAAAABAAEAAAADAAYAAAABAAIAAAADAAcAAAAXAAMAAAABAAEAAAAXAAQAAAABAAYAAAAXAAUAAAABAAcAAAAYAAMAAAACAAEAAAAYAAQAAAACAAYAAAAYAAUAAAACAAcAAAAZAAMAAAACAAEAAAAZAAQAAAACAAYAAAAZAAUAAAACAAcAAAAaAAMAAAADAAEAAAAaAAQAAAADAAYAAAAaAAUAAAADAAcAAAD//wAAAAABAAEAAAD//wEAAAABAAYAAAD//wIAAAABAAcAAAAAAAAAAAACAAEAAAAAAAEAAAACAAYAAAAAAAIAAAACAAcAAAD9/wEAAAAAAAEAAAD9/wIAAAAAAAYAAAD9/wMAAAAAAAcAAAA=")
+tile_set = ExtResource("2_vnunq")
+
+[node name="Player" parent="." instance=ExtResource("3_vnunq")]
