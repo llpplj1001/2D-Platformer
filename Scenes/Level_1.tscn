@@ -1,8 +1,54 @@
-[gd_scene load_steps=4 format=4 uid="uid://bh5lescmnhpky"]
+[gd_scene load_steps=14 format=4 uid="uid://bh5lescmnhpky"]
 
 [ext_resource type="Texture2D" uid="uid://daddmg1hkc27d" path="res://Sprites/Backgrounds/backgroundForest.png" id="1_i63mn"]
 [ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="2_vnunq"]
 [ext_resource type="PackedScene" uid="uid://dv0g1jn3n7ini" path="res://Scenes/player.tscn" id="3_vnunq"]
+[ext_resource type="Script" uid="uid://c0400oog7mfos" path="res://Scripts/enemy.gd" id="4_nh7xm"]
+[ext_resource type="Texture2D" uid="uid://cw8ve08co5tms" path="res://Sprites/Characters/character_0024.png" id="4_nw7js"]
+[ext_resource type="Texture2D" uid="uid://7j5f58v817vc" path="res://Sprites/Characters/character_0025.png" id="6_5r5j8"]
+[ext_resource type="Texture2D" uid="uid://ccpqftl2qj5by" path="res://Sprites/Characters/character_0026.png" id="7_akpl7"]
+[ext_resource type="PackedScene" uid="uid://bj2wjre1h6or3" path="res://Scenes/coin.tscn" id="8_akpl7"]
+[ext_resource type="PackedScene" uid="uid://v4y3k3nglc6a" path="res://Scenes/end_flag.tscn" id="9_aur7v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nh7xm"]
+
+[sub_resource type="Animation" id="Animation_ptpgp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character0024:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_nw7js")]
+}
+
+[sub_resource type="Animation" id="Animation_aur7v"]
+resource_name = "fly"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character0024:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_nw7js"), ExtResource("6_5r5j8"), ExtResource("7_akpl7")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2uqsa"]
+_data = {
+&"RESET": SubResource("Animation_ptpgp"),
+&"fly": SubResource("Animation_aur7v")
+}
 
 [node name="Main" type="Node2D"]
 
@@ -15,3 +61,83 @@ tile_map_data = PackedByteArray("AAD//wAAAAACAAEAAAAAAAAAAAACAAEAAAABAAAAAAADAAE
 tile_set = ExtResource("2_vnunq")
 
 [node name="Player" parent="." instance=ExtResource("3_vnunq")]
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Enemy" type="Area2D" parent="Enemies"]
+position = Vector2(-47, -45)
+script = ExtResource("4_nh7xm")
+move_direction = Vector2(0, 50)
+
+[node name="Character0024" type="Sprite2D" parent="Enemies/Enemy"]
+position = Vector2(72, -14)
+texture = ExtResource("4_nw7js")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy"]
+position = Vector2(72, -14)
+shape = SubResource("CircleShape2D_nh7xm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/Enemy"]
+libraries = {
+&"": SubResource("AnimationLibrary_2uqsa")
+}
+
+[node name="Enemy2" type="Area2D" parent="Enemies"]
+position = Vector2(67, -11)
+script = ExtResource("4_nh7xm")
+move_direction = Vector2(0, 50)
+
+[node name="Character0024" type="Sprite2D" parent="Enemies/Enemy2"]
+position = Vector2(72, -14)
+texture = ExtResource("4_nw7js")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy2"]
+position = Vector2(72, -14)
+shape = SubResource("CircleShape2D_nh7xm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/Enemy2"]
+libraries = {
+&"": SubResource("AnimationLibrary_2uqsa")
+}
+
+[node name="Enemy3" type="Area2D" parent="Enemies"]
+position = Vector2(195, -44)
+script = ExtResource("4_nh7xm")
+move_direction = Vector2(0, 50)
+
+[node name="Character0024" type="Sprite2D" parent="Enemies/Enemy3"]
+position = Vector2(72, -14)
+texture = ExtResource("4_nw7js")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy3"]
+position = Vector2(72, -14)
+shape = SubResource("CircleShape2D_nh7xm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/Enemy3"]
+libraries = {
+&"": SubResource("AnimationLibrary_2uqsa")
+}
+
+[node name="Coins\'" type="Node" parent="."]
+
+[node name="Coin" parent="Coins\'" instance=ExtResource("8_akpl7")]
+
+[node name="Coin2" parent="Coins\'" instance=ExtResource("8_akpl7")]
+position = Vector2(-92, -20)
+
+[node name="Coin3" parent="Coins\'" instance=ExtResource("8_akpl7")]
+position = Vector2(125, -20)
+
+[node name="Coin4" parent="Coins\'" instance=ExtResource("8_akpl7")]
+position = Vector2(252, -19)
+
+[node name="Coin5" parent="Coins\'" instance=ExtResource("8_akpl7")]
+position = Vector2(398, -1)
+
+[node name="EndFlag" parent="." instance=ExtResource("9_aur7v")]
+position = Vector2(495, 25)
+scene_to_load = ExtResource("3_vnunq")
+
+[connection signal="body_entered" from="Enemies/Enemy" to="Enemies/Enemy" method="_on_body_entered"]
+[connection signal="body_entered" from="Enemies/Enemy2" to="Enemies/Enemy2" method="_on_body_entered"]
+[connection signal="body_entered" from="Enemies/Enemy3" to="Enemies/Enemy3" method="_on_body_entered"]
