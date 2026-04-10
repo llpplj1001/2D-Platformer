@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://cq8yq7tnrvhsb"]
+[gd_scene load_steps=21 format=4 uid="uid://cq8yq7tnrvhsb"]
 
 [ext_resource type="Script" uid="uid://b8qko3r2kqddy" path="res://Scripts/background_parallax.gd" id="1_001cu"]
 [ext_resource type="Texture2D" uid="uid://bpkkj4i0lidm8" path="res://Sprites/Backgrounds/backgroundDesert.png" id="2_001cu"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://7j5f58v817vc" path="res://Sprites/Characters/character_0025.png" id="7_tm7ih"]
 [ext_resource type="Texture2D" uid="uid://ccpqftl2qj5by" path="res://Sprites/Characters/character_0026.png" id="8_25io1"]
 [ext_resource type="PackedScene" uid="uid://bj2wjre1h6or3" path="res://Scenes/coin.tscn" id="9_8gp1p"]
+[ext_resource type="Script" uid="uid://cw0fgku2k5c3n" path="res://Scenes/enemy_2.gd" id="9_diio2"]
 [ext_resource type="PackedScene" uid="uid://v4y3k3nglc6a" path="res://Scenes/end_flag.tscn" id="10_yybfe"]
 [ext_resource type="PackedScene" uid="uid://byr7xwu7f3oj" path="res://Scenes/menu.tscn" id="11_5ufib"]
 
@@ -52,6 +53,46 @@ _data = {
 &"fly": SubResource("Animation_aur7v")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_v1bqs"]
+
+[sub_resource type="Animation" id="Animation_7qdet"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character0024:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_57dsp")]
+}
+
+[sub_resource type="Animation" id="Animation_57dsp"]
+resource_name = "fly"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character0024:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_57dsp"), ExtResource("7_tm7ih"), ExtResource("8_25io1")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tm7ih"]
+_data = {
+&"RESET": SubResource("Animation_7qdet"),
+&"fly": SubResource("Animation_57dsp")
+}
+
 [node name="Main" type="Node2D"]
 
 [node name="Background" type="Node2D" parent="."]
@@ -69,88 +110,132 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_001cu")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAD//wAAAAABAAMAAAAAAAAAAAADAAMAAAD//wEAAAABAAYAAAD//wIAAAABAAYAAAD//wMAAAABAAcAAAAAAAMAAAADAAcAAAAAAAEAAAADAAYAAAAAAAIAAAADAAYAAAADAP//AAAAAAMAAAADAAAAAAAAAAYAAAADAAEAAAAAAAYAAAADAAIAAAAAAAcAAAAGAP//AAABAAMAAAAGAAAAAAABAAYAAAAGAAEAAAABAAcAAAAHAAAAAAACAAYAAAAHAAEAAAACAAcAAAAIAAAAAAADAAYAAAAIAAEAAAADAAcAAAAIAP//AAADAAMAAAAHAP//AAACAAMAAAANAAAAAAAAAAMAAAANAAEAAAAAAAYAAAANAAIAAAAAAAcAAAAQAAAAAAAAAAMAAAAQAAEAAAAAAAYAAAAQAAIAAAAAAAcAAAASAP//AAAAAAYAAAASAAAAAAAAAAcAAAASAP7/AAAAAAMAAAAXAAEAAAABAAMAAAAYAAEAAAACAAMAAAAZAAEAAAADAAMAAAAXAAIAAAABAAYAAAAXAAMAAAABAAcAAAAYAAIAAAACAAYAAAAYAAMAAAACAAcAAAAZAAIAAAADAAYAAAAZAAMAAAADAAcAAAAUAAMAAAAAAAIAAAAcAAEAAAAAAAMAAAAcAAIAAAAAAAYAAAAcAAMAAAAAAAcAAAAeAAEAAAABAAMAAAAfAAEAAAACAAMAAAAgAAEAAAADAAMAAAAeAAIAAAABAAYAAAAeAAMAAAABAAcAAAAfAAIAAAACAAYAAAAfAAMAAAACAAcAAAAgAAIAAAADAAYAAAAgAAMAAAADAAcAAAA=")
+tile_map_data = PackedByteArray("AAD//wAAAAABAAMAAAAAAAAAAAADAAMAAAD//wEAAAABAAYAAAD//wIAAAABAAYAAAD//wMAAAABAAcAAAAAAAMAAAADAAcAAAAAAAEAAAADAAYAAAAAAAIAAAADAAYAAAAXAAEAAAABAAMAAAAYAAEAAAACAAMAAAAZAAEAAAADAAMAAAAXAAIAAAABAAYAAAAXAAMAAAABAAcAAAAYAAIAAAACAAYAAAAYAAMAAAACAAcAAAAZAAIAAAADAAYAAAAZAAMAAAADAAcAAAAUAAMAAAAAAAIAAAAcAAEAAAAAAAMAAAAcAAIAAAAAAAYAAAAcAAMAAAAAAAcAAAAFAAAAAAAAAAMAAAAFAAEAAAAAAAYAAAAFAAIAAAAAAAYAAAAJAP//AAAIAAIAAAAKAP//AAAJAAIAAAALAP//AAAKAAIAAAAJAAAAAAAJAAMAAAAJAAEAAAAJAAQAAAAJAAIAAAAJAAUAAAALAAEAAAAJAAQAAAALAAIAAAAJAAUAAAAJAAMAAAABAAIAAAAKAAMAAAACAAIAAAALAAMAAAADAAIAAAALAP7/AAAIAAQAAAAFAP//AAAHAAYAAAAKAAIAAAAHAAYAAAALAAAAAAAJAAMAAAARAAMAAAAAAAMAAAARAAQAAAAAAAYAAAARAAUAAAAAAAcAAAANAPz/AAAAAAMAAAANAP3/AAAAAAYAAAANAP7/AAAAAAcAAAA=")
 tile_set = ExtResource("3_diio2")
 
 [node name="Player" parent="." instance=ExtResource("4_v1bqs")]
 
-[node name="Enemies" type="Node" parent="."]
+[node name="Enemies_y" type="Node" parent="."]
 
-[node name="Enemy" type="Area2D" parent="Enemies"]
+[node name="Enemy" type="Area2D" parent="Enemies_y"]
 position = Vector2(-31, -12)
 script = ExtResource("5_7qdet")
 move_direction = Vector2(0, 50)
+move_speed = 20.0
 
-[node name="Character0024" type="Sprite2D" parent="Enemies/Enemy"]
+[node name="Character0024" type="Sprite2D" parent="Enemies_y/Enemy"]
 position = Vector2(72, -14)
 texture = ExtResource("6_57dsp")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies_y/Enemy"]
 position = Vector2(72, -14)
 shape = SubResource("CircleShape2D_nh7xm")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/Enemy"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies_y/Enemy"]
 libraries = {
 &"": SubResource("AnimationLibrary_2uqsa")
 }
 
-[node name="Enemy2" type="Area2D" parent="Enemies"]
+[node name="Enemy2" type="Area2D" parent="Enemies_y"]
 position = Vector2(110, -15)
 script = ExtResource("5_7qdet")
 move_direction = Vector2(0, 50)
+move_speed = 60.0
 
-[node name="Character0024" type="Sprite2D" parent="Enemies/Enemy2"]
+[node name="Character0024" type="Sprite2D" parent="Enemies_y/Enemy2"]
 position = Vector2(72, -14)
 texture = ExtResource("6_57dsp")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies_y/Enemy2"]
 position = Vector2(72, -14)
 shape = SubResource("CircleShape2D_nh7xm")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/Enemy2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies_y/Enemy2"]
 libraries = {
 &"": SubResource("AnimationLibrary_2uqsa")
 }
 
-[node name="Enemy3" type="Area2D" parent="Enemies"]
-position = Vector2(222, -32)
-script = ExtResource("5_7qdet")
-move_direction = Vector2(0, 50)
+[node name="Enemies_X" type="Node" parent="."]
 
-[node name="Character0024" type="Sprite2D" parent="Enemies/Enemy3"]
+[node name="Enemy2" type="Area2D" parent="Enemies_X"]
+position = Vector2(204, 19)
+script = ExtResource("9_diio2")
+move_direction = Vector2(100, 0)
+
+[node name="Character0024" type="Sprite2D" parent="Enemies_X/Enemy2"]
 position = Vector2(72, -14)
 texture = ExtResource("6_57dsp")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies_X/Enemy2"]
 position = Vector2(72, -14)
-shape = SubResource("CircleShape2D_nh7xm")
+shape = SubResource("CircleShape2D_v1bqs")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/Enemy3"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies_X/Enemy2"]
 libraries = {
-&"": SubResource("AnimationLibrary_2uqsa")
+&"": SubResource("AnimationLibrary_tm7ih")
 }
 
-[node name="Coins\'" type="Node" parent="."]
+[node name="Enemy3" type="Area2D" parent="Enemies_X"]
+position = Vector2(348, 19)
+script = ExtResource("9_diio2")
+move_direction = Vector2(60, 0)
+move_speed = 60.0
 
-[node name="Coin" parent="Coins\'" instance=ExtResource("9_8gp1p")]
-position = Vector2(18, -38)
+[node name="Character0024" type="Sprite2D" parent="Enemies_X/Enemy3"]
+position = Vector2(72, -14)
+texture = ExtResource("6_57dsp")
 
-[node name="Coin2" parent="Coins\'" instance=ExtResource("9_8gp1p")]
-position = Vector2(-54, -39)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies_X/Enemy3"]
+position = Vector2(72, -14)
+shape = SubResource("CircleShape2D_v1bqs")
 
-[node name="Coin3" parent="Coins\'" instance=ExtResource("9_8gp1p")]
-position = Vector2(125, -20)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies_X/Enemy3"]
+libraries = {
+&"": SubResource("AnimationLibrary_tm7ih")
+}
 
-[node name="Coin4" parent="Coins\'" instance=ExtResource("9_8gp1p")]
-position = Vector2(252, -19)
+[node name="Enemy5" type="Area2D" parent="Enemies_X"]
+position = Vector2(22, -84)
+script = ExtResource("9_diio2")
+move_direction = Vector2(200, 0)
+move_speed = 120.0
 
-[node name="Coin5" parent="Coins\'" instance=ExtResource("9_8gp1p")]
+[node name="Character0024" type="Sprite2D" parent="Enemies_X/Enemy5"]
+position = Vector2(72, -14)
+texture = ExtResource("6_57dsp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies_X/Enemy5"]
+position = Vector2(72, -14)
+shape = SubResource("CircleShape2D_v1bqs")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies_X/Enemy5"]
+libraries = {
+&"": SubResource("AnimationLibrary_tm7ih")
+}
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("9_8gp1p")]
+position = Vector2(20, -62)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("9_8gp1p")]
+position = Vector2(197, -45)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("9_8gp1p")]
+position = Vector2(127, -92)
+
+[node name="Coin4" parent="Coins" instance=ExtResource("9_8gp1p")]
+position = Vector2(198, 35)
+
+[node name="Coin5" parent="Coins" instance=ExtResource("9_8gp1p")]
 position = Vector2(395, -1)
 
 [node name="EndFlag" parent="." instance=ExtResource("10_yybfe")]
 position = Vector2(495, 25)
 scene_to_load = ExtResource("11_5ufib")
 
-[connection signal="body_entered" from="Enemies/Enemy" to="Enemies/Enemy" method="_on_body_entered"]
-[connection signal="body_entered" from="Enemies/Enemy2" to="Enemies/Enemy2" method="_on_body_entered"]
-[connection signal="body_entered" from="Enemies/Enemy3" to="Enemies/Enemy3" method="_on_body_entered"]
+[connection signal="body_entered" from="Enemies_y/Enemy" to="Enemies_y/Enemy" method="_on_body_entered"]
+[connection signal="body_entered" from="Enemies_y/Enemy2" to="Enemies_y/Enemy2" method="_on_body_entered"]
+[connection signal="body_entered" from="Enemies_X/Enemy2" to="Enemies_X/Enemy2" method="_on_body_entered"]
+[connection signal="body_entered" from="Enemies_X/Enemy3" to="Enemies_X/Enemy3" method="_on_body_entered"]
+[connection signal="body_entered" from="Enemies_X/Enemy5" to="Enemies_X/Enemy5" method="_on_body_entered"]

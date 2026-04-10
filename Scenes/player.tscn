@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://miq1be7j6s70" path="res://Sprites/Objects/tile_0044.png" id="4_vgqql"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
-height = 28.0
+height = 21.851171
 
 [sub_resource type="Animation" id="Animation_fkybt"]
 length = 0.001
@@ -95,7 +95,8 @@ texture = ExtResource("2_6t5aa")
 offset = Vector2(0, -12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -14)
+position = Vector2(0, -13)
+scale = Vector2(0.98598087, -1.1898676)
 shape = SubResource("CapsuleShape2D_cvnsp")
 
 [node name="Camera2D" type="Camera2D" parent="."]
