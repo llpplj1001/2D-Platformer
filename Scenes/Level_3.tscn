@@ -1,5 +1,8 @@
-[gd_scene format=3 uid="uid://d4gs85xktsgro"]
+[gd_scene load_steps=2 format=3 uid="uid://d4gs85xktsgro"]
+
+[ext_resource type="TileSet" uid="uid://bo5rdah57r0ia" path="res://Sprites/Tiles/Tiles/level_3_tile.tres" id="1_1loue"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = ExtResource("1_1loue")
