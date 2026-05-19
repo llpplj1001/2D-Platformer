@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3mgclqxdb221"
-path="res://.godot/imported/free (1).png-b4cc528f19bbc5d803c8b15296196d1e.ctex"
+uid="uid://d2xdye7ejv8bp"
+path="res://.godot/imported/fall2.png-9c7bdb59cc79f534a6514bb4f16989f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Tiles/Tiles/free (1).png"
-dest_files=["res://.godot/imported/free (1).png-b4cc528f19bbc5d803c8b15296196d1e.ctex"]
+source_file="res://Sprites/Tiles/Tiles/gothicvania church files/Assets/SPRITES/player/sprites/fall2.png"
+dest_files=["res://.godot/imported/fall2.png-9c7bdb59cc79f534a6514bb4f16989f5.ctex"]
 
 [params]
 

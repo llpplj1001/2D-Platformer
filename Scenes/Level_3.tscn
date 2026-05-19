@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://d4gs85xktsgro"]
+[gd_scene load_steps=3 format=3 uid="uid://d4gs85xktsgro"]
 
-[ext_resource type="TileSet" uid="uid://bo5rdah57r0ia" path="res://Sprites/Tiles/Tiles/level_3_tile.tres" id="1_1loue"]
+[ext_resource type="TileSet" uid="uid://b5ww7jrv3ygfx" path="res://Sprites/Tiles/Tiles/level_3_tiles.tres" id="1_w2ny1"]
+[ext_resource type="Texture2D" uid="uid://ch71w5al4d8l5" path="res://Sprites/Tiles/Tiles/gothicvania church files/Assets/ENVIRONMENT/backgrounds.png" id="2_tnxnj"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_set = ExtResource("1_1loue")
+tile_set = ExtResource("1_w2ny1")
+
+[node name="Backgrounds" type="Sprite2D" parent="."]
+position = Vector2(9, -19)
+texture = ExtResource("2_tnxnj")
