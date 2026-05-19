@@ -1,5 +1,4 @@
 extends Node2D
 
-func _process(delta: float) -> void:
+func _ready() -> void:
 	$AnimationPlayer.play("opening")
-	
