@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://bsta7akhqb1it"]
+
+[ext_resource type="Texture2D" uid="uid://bw3w1p48rwiro" path="res://Sprites/Characters/Sprite-0001.png" id="1_nsg7t"]
+[ext_resource type="Texture2D" uid="uid://dg0et3prolaul" path="res://Sprites/Characters/Sprite-0002.png" id="2_1qlco"]
+[ext_resource type="Texture2D" uid="uid://bbpdaapm6n0fk" path="res://Sprites/Characters/Sprite-0003.png" id="3_ay6db"]
+[ext_resource type="Texture2D" uid="uid://dxtsl0ud18xj2" path="res://Sprites/Characters/Sprite-0004.png" id="4_yy60l"]
+[ext_resource type="Texture2D" uid="uid://bp2qfxufy85un" path="res://Sprites/Characters/mudskipper jump2.png" id="5_fu8k4"]
+[ext_resource type="Texture2D" uid="uid://bfmy16wj1dqay" path="res://Sprites/Characters/mudskipper animation copy1.png" id="6_hhgu0"]
+[ext_resource type="Texture2D" uid="uid://b46qkbrsixnew" path="res://Sprites/Characters/mudskipper animation copy2.png" id="7_atqtp"]
+[ext_resource type="Texture2D" uid="uid://bfoa46odmy62o" path="res://Sprites/Characters/mudskipper animation copy3.png" id="8_oa3of"]
+[ext_resource type="Texture2D" uid="uid://bpee5vfpdjtqj" path="res://Sprites/Characters/mudskipper animation copy4.png" id="9_8wy8v"]
+[ext_resource type="Texture2D" uid="uid://brm25p2kygk6i" path="res://Sprites/Characters/mudskipper animation copy5.png" id="10_6rfti"]
+[ext_resource type="Texture2D" uid="uid://3pyxmveimhp6" path="res://Sprites/Characters/mudskipper animation copy7.png" id="11_55kjk"]
+[ext_resource type="Texture2D" uid="uid://blc7tjudc5exa" path="res://Sprites/Characters/mudskipper animation copy8.png" id="12_xi56y"]
+
+[sub_resource type="Animation" id="Animation_1fm5x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_nsg7t")]
+}
+
+[sub_resource type="Animation" id="Animation_s4cih"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_nsg7t"), ExtResource("2_1qlco"), ExtResource("3_ay6db"), ExtResource("4_yy60l")]
+}
+
+[sub_resource type="Animation" id="Animation_46umy"]
+resource_name = "jump"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_fu8k4")]
+}
+
+[sub_resource type="Animation" id="Animation_rb5rf"]
+resource_name = "walking"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_hhgu0"), ExtResource("7_atqtp"), ExtResource("8_oa3of"), ExtResource("9_8wy8v"), ExtResource("10_6rfti"), ExtResource("10_6rfti"), ExtResource("11_55kjk"), ExtResource("12_xi56y")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v1wfa"]
+_data = {
+&"RESET": SubResource("Animation_1fm5x"),
+&"idle": SubResource("Animation_s4cih"),
+&"jump": SubResource("Animation_46umy"),
+&"walking": SubResource("Animation_rb5rf")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nsg7t"]
+height = 21.851171
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=254560370]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=881167410]
+scale = Vector2(0.002, 0.002)
+texture = ExtResource("1_nsg7t")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1194382052]
+root_node = NodePath("../Sprite2D")
+libraries/ = SubResource("AnimationLibrary_v1wfa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2057752388]
+position = Vector2(0, -1.3552527e-20)
+scale = Vector2(0.02090943, -0.05431923)
+shape = SubResource("CapsuleShape2D_nsg7t")
