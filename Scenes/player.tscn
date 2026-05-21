@@ -148,4 +148,3 @@ text = "Score: 500"
 label_settings = SubResource("LabelSettings_fkybt")
 
 [node name="Node2D" parent="." instance=ExtResource("7_3smsa")]
-visible = false

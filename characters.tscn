@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://csw16jcb4mr56"]
+
+[ext_resource type="Script" uid="uid://cj8e364wcnnbv" path="res://characters.gd" id="1_6knve"]
+[ext_resource type="Texture2D" uid="uid://lxg4g4n8pejq" path="res://Sprites/Characters/mudskipper idel4.png" id="1_wn83q"]
+[ext_resource type="Texture2D" uid="uid://boym8rwk8fqpe" path="res://Sprites/Characters/character_0001.png" id="2_6knve"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6knve"]
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_6knve")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(677, 437)
+rotation = 3.1415925
+scale = Vector2(10.781221, -10.33352)
+shape = SubResource("RectangleShape2D_6knve")
+
+[node name="Sprite2" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(-3.8146973e-06, 10.64497)
+rotation = 3.1415925
+scale = Vector2(0.7592682, -0.84523934)
+texture = ExtResource("2_6knve")
+offset = Vector2(0, -12)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(877.99994, 460.00003)
+scale = Vector2(0.6179769, 0.5540049)
+texture = ExtResource("1_wn83q")

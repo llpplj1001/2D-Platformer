@@ -53,6 +53,21 @@ tracks/0/keys = {
 "values": [ExtResource("4_88tkl"), ExtResource("5_y0ipg"), ExtResource("6_kjduu"), ExtResource("7_3d8aq"), ExtResource("4_88tkl")]
 }
 
+[sub_resource type="Animation" id="Animation_r5wlx"]
+resource_name = "jump"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("15_8i6g0")]
+}
+
 [sub_resource type="Animation" id="Animation_0qfo5"]
 resource_name = "walking"
 length = 1.2
@@ -70,21 +85,6 @@ tracks/0/keys = {
 "values": [ExtResource("3_c1b4b"), ExtResource("4_7tnxx"), ExtResource("5_bwfjh"), ExtResource("6_x1sy7"), ExtResource("7_sm1rv"), ExtResource("8_jx0ln"), ExtResource("9_bwfjh"), ExtResource("10_x1sy7"), ExtResource("4_7tnxx")]
 }
 
-[sub_resource type="Animation" id="Animation_r5wlx"]
-resource_name = "jump"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("15_8i6g0")]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yxww1"]
 _data = {
 &"RESET": SubResource("Animation_y0ipg"),
@@ -98,8 +98,8 @@ font_size = 38
 shadow_size = 6
 shadow_color = Color(0, 0, 0, 0.99215686)
 
-[node name="character" type="CharacterBody2D"]
-scale = Vector2(0.89374495, 0.73750323)
+[node name="character" type="CharacterBody2D" groups=["Player"]]
+scale = Vector2(0.96284145, 0.75943595)
 script = ExtResource("1_px5sl")
 
 [node name="Sprite" type="Sprite2D" parent="."]
