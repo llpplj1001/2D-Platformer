@@ -1,9 +1,10 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://iqrhf8p8nntu"]
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bo8inam8jlb0t"]
 
-[ext_resource type="Texture2D" uid="uid://dxtv7061skqp" path="res://Sprites/Tiles/gothicvania church files/Assets/ENVIRONMENT/tileset.png" id="1_px3ea"]
+[ext_resource type="Texture2D" uid="uid://dxtv7061skqp" path="res://Sprites/Tiles/gothicvania church files/Assets/ENVIRONMENT/tileset.png" id="1_83bdh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_18jmy"]
-texture = ExtResource("1_px3ea")
+texture = ExtResource("1_83bdh")
+texture_region_size = Vector2i(16, 18)
 8:1/0 = 0
 8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -5.6385717, 8, -5.539649, 8, 8, -8, 8)
 10:1/0 = 0
@@ -157,11 +158,11 @@ texture = ExtResource("1_px3ea")
 6:10/0 = 0
 6:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -5.6385717, 8, -5.539649, 8, 8, -8, 8)
 8:10/0 = 0
-8:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -5.6385717, 8, -5.539649, 8, 8, -8, 8)
+8:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:10/0 = 0
-9:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -5.6385717, 8, -5.539649, 8, 8, -8, 8)
+9:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 10:10/0 = 0
-10:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -5.6385717, 8, -5.539649, 8, 8, -8, 8)
+10:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:10/0 = 0
 12:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -5.6385717, 8, -5.539649, 8, 8, -8, 8)
 13:10/0 = 0
