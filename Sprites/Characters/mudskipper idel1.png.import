@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbpdaapm6n0fk"
-path="res://.godot/imported/Sprite-0003.png-a5449db3323eacf2b2106655aad6c312.ctex"
+uid="uid://bro5h8ntswyaj"
+path="res://.godot/imported/mudskipper idel1.png-79bf4c70cec6f1a339c6a6cce94a336a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Characters/Sprite-0003.png"
-dest_files=["res://.godot/imported/Sprite-0003.png-a5449db3323eacf2b2106655aad6c312.ctex"]
+source_file="res://Sprites/Characters/mudskipper idel1.png"
+dest_files=["res://.godot/imported/mudskipper idel1.png-79bf4c70cec6f1a339c6a6cce94a336a.ctex"]
 
 [params]
 
