@@ -1,64 +1,29 @@
-[gd_scene load_steps=5 format=4 uid="uid://d4gs85xktsgro"]
+[gd_scene format=4 uid="uid://d4gs85xktsgro"]
 
 [ext_resource type="TileSet" uid="uid://iqrhf8p8nntu" path="res://Sprites/Tiles/gothicvania church files/Assets/Tiles/level_3_tiles.tres" id="1_w2ny1"]
 [ext_resource type="TileSet" uid="uid://bo8inam8jlb0t" path="res://Sprites/Tiles/gothicvania church files/Assets/Tiles/floortiles.tres" id="2_s0xyj"]
-[ext_resource type="Texture2D" uid="uid://ch71w5al4d8l5" path="res://Sprites/Tiles/gothicvania church files/Assets/ENVIRONMENT/backgrounds.png" id="2_w2ny1"]
 [ext_resource type="PackedScene" uid="uid://dv0g1jn3n7ini" path="res://Scenes/player.tscn" id="3_tnxnj"]
+[ext_resource type="Texture2D" uid="uid://c2qtvvj450t3r" path="res://Sprites/Backgrounds/background_1.png" id="4_s0xyj"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" unique_id=684219141]
 
-[node name="Wall" type="TileMapLayer" parent="."]
+[node name="Wall" type="TileMapLayer" parent="." unique_id=820921721]
 z_index = 1
-tile_map_data = PackedByteArray("AAD//wAAAQAGAAwAAAD//wEAAQAGAAwAAAAAAAAAAQAGAAwAAAAAAAEAAQAGAAwAAAD/////AQAGAAoAAAD//wIAAAAHAAcAAAD//wMAAAAHAAgAAAAAAP//AQAGAAoAAAAAAAIAAAAIAAcAAAAAAAMAAAAIAAgAAAA=")
+tile_map_data = PackedByteArray("AAD//wAAAQAGAAwAAAD//wEAAQAGAAwAAAAAAAAAAQAGAAwAAAAAAAEAAQAGAAwAAAD/////AQAGAAoAAAD//wIAAAAHAAcAAAD//wMAAAAHAAgAAAAAAP//AQAGAAoAAAAAAAIAAAAIAAcAAAAAAAMAAAAIAAgAAAADAP3/AQAHAAUAAAADAP7/AQAHAAYAAAADAP//AQAHAAcAAAADAAAAAQAHAAgAAAAEAP3/AQAIAAUAAAAEAP7/AQAIAAYAAAAEAP//AQAIAAcAAAAEAAAAAQAIAAgAAAA=")
 tile_set = ExtResource("1_w2ny1")
 
-[node name="Floor" type="TileMapLayer" parent="."]
+[node name="Floor" type="TileMapLayer" parent="." unique_id=1834440088]
 z_index = 1
 tile_map_data = PackedByteArray("AAD//wAAAQAGAAwAAAD//wEAAQAGAAwAAAAAAAAAAQAGAAwAAAAAAAEAAQAGAAwAAAD/////AQAEAAoAAAD//wIAAAAHAAcAAAD//wMAAAAHAAgAAAAAAP//AQAEAAoAAAAAAAIAAAAIAAcAAAAAAAMAAAAIAAgAAAA=")
 tile_set = ExtResource("2_s0xyj")
 
-[node name="Backgrounds" type="Node" parent="."]
+[node name="Backgrounds" type="Node" parent="." unique_id=884315336]
 
-[node name="Backgrounds2" type="Sprite2D" parent="Backgrounds"]
-position = Vector2(2432, 190)
-scale = Vector2(1.8717949, 4.9791665)
-texture = ExtResource("2_w2ny1")
-
-[node name="Backgrounds" type="Sprite2D" parent="Backgrounds/Backgrounds2"]
-position = Vector2(80.61746, 0.07691705)
-scale = Vector2(0.7470638, 0.9991987)
-texture = ExtResource("2_w2ny1")
-
-[node name="Backgrounds2" type="Sprite2D" parent="Backgrounds/Backgrounds2"]
-position = Vector2(722.30133, 0.14838016)
-scale = Vector2(1.3430365, 0.9991165)
-texture = ExtResource("2_w2ny1")
-
-[node name="Backgrounds" type="Sprite2D" parent="Backgrounds/Backgrounds2/Backgrounds2"]
-position = Vector2(80.61746, -0.15977716)
-scale = Vector2(0.7470638, 0.9967331)
-texture = ExtResource("2_w2ny1")
-
-[node name="Backgrounds" type="Sprite2D" parent="Backgrounds"]
-position = Vector2(-267, 190.00003)
-scale = Vector2(1.8717949, 4.9791665)
-texture = ExtResource("2_w2ny1")
-
-[node name="Backgrounds" type="Sprite2D" parent="Backgrounds/Backgrounds"]
-position = Vector2(80.61746, 0.07691705)
-scale = Vector2(0.7470638, 0.9991987)
-texture = ExtResource("2_w2ny1")
-
-[node name="Backgrounds2" type="Sprite2D" parent="Backgrounds/Backgrounds"]
-position = Vector2(722.30133, 0.14838016)
-scale = Vector2(1.3430365, 0.9991165)
-texture = ExtResource("2_w2ny1")
-
-[node name="Backgrounds" type="Sprite2D" parent="Backgrounds/Backgrounds/Backgrounds2"]
-position = Vector2(80.61746, -0.15977716)
-scale = Vector2(0.7470638, 0.9967331)
-texture = ExtResource("2_w2ny1")
-
-[node name="Player" parent="." instance=ExtResource("3_tnxnj")]
+[node name="Player" parent="." unique_id=83397486 instance=ExtResource("3_tnxnj")]
 z_index = 1
 position = Vector2(-1, -16)
+
+[node name="Background1" type="Sprite2D" parent="." unique_id=2061103036]
+position = Vector2(52, 74)
+scale = Vector2(3.7446275, 2.962699)
+texture = ExtResource("4_s0xyj")
