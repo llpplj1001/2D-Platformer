@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=4 uid="uid://c62ulwdhhey4q"]
+[gd_scene load_steps=11 format=4 uid="uid://d4gs85xktsgro"]
 
 [ext_resource type="TileSet" uid="uid://iqrhf8p8nntu" path="res://Sprites/Tiles/gothicvania church files/Assets/Tiles/level_3_tiles.tres" id="1_w2ny1"]
 [ext_resource type="TileSet" uid="uid://bo8inam8jlb0t" path="res://Sprites/Tiles/gothicvania church files/Assets/Tiles/floortiles.tres" id="2_s0xyj"]
-[ext_resource type="PackedScene" uid="uid://dv0g1jn3n7ini" path="res://Scenes/player.tscn" id="3_tnxnj"]
 [ext_resource type="Texture2D" uid="uid://dcru62skjqtvg" path="res://Sprites/Backgrounds/background_5.png" id="4_38glg"]
 [ext_resource type="Texture2D" uid="uid://c2qtvvj450t3r" path="res://Sprites/Backgrounds/background_1.png" id="4_s0xyj"]
 [ext_resource type="Texture2D" uid="uid://7g486n26wkye" path="res://Sprites/Backgrounds/background_2.png" id="5_38glg"]
@@ -10,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dwdfeijhtjae3" path="res://Sprites/Backgrounds/background_3.png" id="8_ale0u"]
 [ext_resource type="PackedScene" uid="uid://v4y3k3nglc6a" path="res://Scenes/end_flag.tscn" id="8_dvi3f"]
 [ext_resource type="PackedScene" uid="uid://byr7xwu7f3oj" path="res://Scenes/menu.tscn" id="9_151xs"]
+[ext_resource type="PackedScene" uid="uid://db1sn4spek3ix" path="res://character.tscn" id="10_dvi3f"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -122,6 +122,7 @@ texture = ExtResource("7_y5hg5")
 position = Vector2(5674, -529)
 scene_to_load = ExtResource("9_151xs")
 
-[node name="Player" parent="." instance=ExtResource("3_tnxnj")]
-z_index = 1
+[node name="character" parent="." instance=ExtResource("10_dvi3f")]
+top_level = true
 position = Vector2(5549, -592)
+scale = Vector2(0.96013826, 0.76519203)

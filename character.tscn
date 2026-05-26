@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bfoa46odmy62o" path="res://Sprites/Characters/mudskipper animation copy3.png" id="5_bwfjh"]
 [ext_resource type="Texture2D" uid="uid://miq1be7j6s70" path="res://Sprites/Objects/tile_0044.png" id="5_jb3kq"]
 [ext_resource type="Texture2D" uid="uid://bkrdtw4d6abts" path="res://Sprites/Characters/mudskipper idel2.png" id="5_y0ipg"]
-[ext_resource type="PackedScene" uid="uid://c4aoebjj8nhtn" path="res://node_2d.tscn" id="6_c1b4b"]
+[ext_resource type="PackedScene" uid="uid://bl1nrs1fd0ayy" path="res://node_2d.tscn" id="6_c1b4b"]
 [ext_resource type="Texture2D" uid="uid://djnb0a14mxm8" path="res://Sprites/Characters/mudskipper idel3.png" id="6_kjduu"]
 [ext_resource type="Texture2D" uid="uid://bpee5vfpdjtqj" path="res://Sprites/Characters/mudskipper animation copy4.png" id="6_x1sy7"]
 [ext_resource type="Texture2D" uid="uid://lxg4g4n8pejq" path="res://Sprites/Characters/mudskipper idel4.png" id="7_3d8aq"]
@@ -19,7 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://blc7tjudc5exa" path="res://Sprites/Characters/mudskipper animation copy8.png" id="10_x1sy7"]
 [ext_resource type="Texture2D" uid="uid://bp2qfxufy85un" path="res://Sprites/Characters/mudskipper jump2.png" id="15_8i6g0"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_88tkl"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_88tkl"]
+size = Vector2(20, 19.24953)
 
 [sub_resource type="Animation" id="Animation_y0ipg"]
 length = 2.0
@@ -99,7 +100,7 @@ shadow_size = 6
 shadow_color = Color(0, 0, 0, 0.99215686)
 
 [node name="character" type="CharacterBody2D" groups=["Player"]]
-scale = Vector2(0.96284145, 0.75943595)
+scale = Vector2(2.4005926, 1.625988)
 script = ExtResource("1_px5sl")
 
 [node name="Sprite" type="Sprite2D" parent="."]
@@ -107,9 +108,9 @@ scale = Vector2(0.075, 0.087)
 texture = ExtResource("3_c1b4b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4)
-scale = Vector2(0.6606458, -1.2772665)
-shape = SubResource("CapsuleShape2D_88tkl")
+position = Vector2(0, -5.035511)
+scale = Vector2(0.87116444, -2.7596397)
+shape = SubResource("RectangleShape2D_88tkl")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
