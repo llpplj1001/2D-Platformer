@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://d4gs85xktsgro"]
 
-[ext_resource type="Script" uid="uid://cqksnsreeui5o" path="res://zombie.gd" id="1_ale0u"]
+[ext_resource type="Script" uid="uid://cqksnsreeui5o" path="res://Scenes/zombie.gd" id="1_ale0u"]
 [ext_resource type="Texture2D" uid="uid://wfuubc8cvlm3" path="res://Sprites/Tiles/gothicvania church files/Assets/SPRITES/burning-ghoul/sprites/v1/burning-ghoul-1.png" id="2_k6xtq"]
 [ext_resource type="Texture2D" uid="uid://ctkmgxkyr451e" path="res://Sprites/Tiles/gothicvania church files/Assets/SPRITES/burning-ghoul/sprites/v1/burning-ghoul-2.png" id="3_dvi3f"]
 [ext_resource type="Texture2D" uid="uid://cmmjc1h3ejuju" path="res://Sprites/Tiles/gothicvania church files/Assets/SPRITES/burning-ghoul/sprites/v1/burning-ghoul-3.png" id="4_151xs"]
@@ -10,6 +10,21 @@
 [ext_resource type="Texture2D" uid="uid://cr67fubqjgcwi" path="res://Sprites/Tiles/gothicvania church files/Assets/SPRITES/burning-ghoul/sprites/v1/burning-ghoul-7.png" id="8_ope7d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5vm0g"]
+
+[sub_resource type="Animation" id="Animation_fpxwj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("zombie:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_k6xtq")]
+}
 
 [sub_resource type="Animation" id="Animation_050lg"]
 resource_name = "walking"
@@ -26,21 +41,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("2_k6xtq"), ExtResource("3_dvi3f"), ExtResource("4_151xs"), ExtResource("5_dudvk"), ExtResource("6_m08rq"), ExtResource("7_kqn1a"), ExtResource("8_ope7d"), ExtResource("2_k6xtq")]
-}
-
-[sub_resource type="Animation" id="Animation_fpxwj"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("zombie:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("2_k6xtq")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uiaus"]
