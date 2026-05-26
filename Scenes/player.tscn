@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://cva4i4q883bsl" path="res://Scripts/camera_shake.gd" id="3_x3wgy"]
 [ext_resource type="Script" uid="uid://hfptd803ygap" path="res://Scripts/player_ui.gd" id="4_fkybt"]
 [ext_resource type="Texture2D" uid="uid://miq1be7j6s70" path="res://Sprites/Objects/tile_0044.png" id="4_vgqql"]
-[ext_resource type="PackedScene" path="res://node_2d.tscn" id="7_3smsa"]
+[ext_resource type="PackedScene" uid="uid://c4aoebjj8nhtn" path="res://node_2d.tscn" id="7_3smsa"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
 radius = 11.156403
