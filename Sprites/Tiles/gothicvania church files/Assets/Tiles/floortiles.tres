@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bo8inam8jlb0t"]
+[gd_resource type="TileSet" format=3 uid="uid://bo8inam8jlb0t"]
 
 [ext_resource type="Texture2D" uid="uid://dxtv7061skqp" path="res://Sprites/Tiles/gothicvania church files/Assets/ENVIRONMENT/tileset.png" id="1_83bdh"]
 

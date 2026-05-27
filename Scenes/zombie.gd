@@ -17,11 +17,11 @@ func _physics_process(delta):
 
 		if target_pos == start_pos:
 			target_pos = start_pos + move_direction
-			$zombie.flip_h = true
+			$zombie.flip_h = false
 
 		else:
 			target_pos = start_pos
-			$zombie.flip_h = false
+			$zombie.flip_h = true
 
 
 func _on_body_entered(body):
