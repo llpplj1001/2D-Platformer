@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bh5lescmnhpky"]
+[gd_scene format=3 uid="uid://b1j48wmuo13mr"]
 
 [ext_resource type="Script" uid="uid://cqksnsreeui5o" path="res://Scenes/zombie.gd" id="1_akpl7"]
 [ext_resource type="Texture2D" uid="uid://wfuubc8cvlm3" path="res://Sprites/Tiles/gothicvania church files/Assets/SPRITES/burning-ghoul/sprites/v1/burning-ghoul-1.png" id="2_aur7v"]
@@ -49,18 +49,16 @@ _data = {
 &"walking": SubResource("Animation_050lg")
 }
 
-[node name="Area2D" type="Area2D"]
+[node name="Area2D" type="Area2D" unique_id=730467925]
 script = ExtResource("1_akpl7")
 
-[node name="zombie" type="Sprite2D" parent="."]
+[node name="zombie" type="Sprite2D" parent="." unique_id=661805951]
 texture = ExtResource("2_aur7v")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1439245033]
 position = Vector2(-2, 9)
 scale = Vector2(1.8831533, 1.9314268)
 shape = SubResource("CircleShape2D_5vm0g")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_uiaus")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1737889315]
+libraries/ = SubResource("AnimationLibrary_uiaus")

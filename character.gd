@@ -30,15 +30,14 @@ func _physics_process(delta):
 	else:
 		has_double_jumped = false
 	
-		if not is_knocked_back:
-			move_input = Input.get_axis("move_left" , "move_right")
+	if not is_knocked_back:
+		move_input = Input.get_axis("move_left" , "move_right")
 		
-			if move_input != 0:
-				velocity.x =lerp(velocity.x, move_input * move_speed, acceleration * delta)
-			else:
-				velocity.x = lerp(velocity.x, 0.0, braking * delta)
+		if move_input != 0:
+			velocity.x =lerp(velocity.x, move_input * move_speed, acceleration * delta)
 		else:
 			velocity.x = lerp(velocity.x, 0.0, braking * delta)
+	
 
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():

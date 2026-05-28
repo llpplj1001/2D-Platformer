@@ -1329,6 +1329,7 @@ position = Vector2(3392, -376)
 [node name="character" parent="." unique_id=778221523 instance=ExtResource("18_6w0qs")]
 top_level = true
 position = Vector2(-12, -29)
+scale = Vector2(2.4005926, 1.625988)
 
 [connection signal="body_entered" from="Enemies_y/Enemy" to="Enemies_y/Enemy" method="_on_body_entered"]
 [connection signal="body_entered" from="Enemies_y/Enemy2" to="Enemies_y/Enemy2" method="_on_body_entered"]

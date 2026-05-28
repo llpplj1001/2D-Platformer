@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://d4gs85xktsgro"]
+[gd_scene format=4 uid="uid://d4gs85xktsgro"]
 
 [ext_resource type="TileSet" uid="uid://iqrhf8p8nntu" path="res://Sprites/Tiles/gothicvania church files/Assets/Tiles/level_3_tiles.tres" id="1_w2ny1"]
 [ext_resource type="TileSet" uid="uid://bo8inam8jlb0t" path="res://Sprites/Tiles/gothicvania church files/Assets/Tiles/floortiles.tres" id="2_s0xyj"]
