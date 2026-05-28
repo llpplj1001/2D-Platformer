@@ -14,6 +14,9 @@ signal OnUpdateScore (score: int)
 var move_input : float
 var has_double_jumped : bool = false
 
+var is_knocked_back : bool = false
+@export var knockback_force : Vector2 = Vector2(250,-150)
+
 @onready var sprite : Sprite2D = $Sprite
 @onready var anim : AnimationPlayer = $AnimationPlayer
 @onready var audio : AudioStreamPlayer2D = $AudioStreamPlayer
@@ -26,14 +29,16 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 	else:
 		has_double_jumped = false
-	move_input = Input.get_axis("move_left" , "move_right")
 	
-	velocity.x = move_input * move_speed
-	
-	if move_input != 0:
-		velocity.x =lerp(velocity.x, move_input * move_speed, acceleration * delta)
-	else:
-		velocity.x = lerp(velocity.x, 0.0, braking * delta)
+		if not is_knocked_back:
+			move_input = Input.get_axis("move_left" , "move_right")
+		
+			if move_input != 0:
+				velocity.x =lerp(velocity.x, move_input * move_speed, acceleration * delta)
+			else:
+				velocity.x = lerp(velocity.x, 0.0, braking * delta)
+		else:
+			velocity.x = lerp(velocity.x, 0.0, braking * delta)
 
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
@@ -61,7 +66,7 @@ func _manage_animation():
 		anim.play("idle")
 
 
-func take_damage(amount : int):
+func take_damage(amount : int, _source_position : Vector2 = Vector2.ZERO):
 	health -= amount
 	OnUpdateHealth.emit(health)
 	_damage_flash ()
@@ -69,6 +74,16 @@ func take_damage(amount : int):
 	
 	if health <= 0:
 		call_deferred("game_over")
+		return
+	if _source_position != Vector2.ZERO:
+		is_knocked_back = true
+		if move_input != 0:
+			velocity.x = -move_input * knockback_force.x 
+		else:
+			velocity.x = -150.0
+		velocity.y = knockback_force.y
+		await get_tree().create_timer(0.2).timeout
+		is_knocked_back = false
 
 func game_over():
 	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
