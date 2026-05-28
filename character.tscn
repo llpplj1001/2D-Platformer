@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://db1sn4spek3ix"]
+[gd_scene format=3 uid="uid://db1sn4spek3ix"]
 
 [ext_resource type="Script" uid="uid://d1dbs8u0ackm0" path="res://character.gd" id="1_px5sl"]
 [ext_resource type="Script" uid="uid://cva4i4q883bsl" path="res://Scripts/camera_shake.gd" id="2_yxww1"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://bfoa46odmy62o" path="res://Sprites/Characters/mudskipper animation copy3.png" id="5_bwfjh"]
 [ext_resource type="Texture2D" uid="uid://miq1be7j6s70" path="res://Sprites/Objects/tile_0044.png" id="5_jb3kq"]
 [ext_resource type="Texture2D" uid="uid://bkrdtw4d6abts" path="res://Sprites/Characters/mudskipper idel2.png" id="5_y0ipg"]
-[ext_resource type="PackedScene" uid="uid://bl1nrs1fd0ayy" path="res://node_2d.tscn" id="6_c1b4b"]
 [ext_resource type="Texture2D" uid="uid://djnb0a14mxm8" path="res://Sprites/Characters/mudskipper idel3.png" id="6_kjduu"]
 [ext_resource type="Texture2D" uid="uid://bpee5vfpdjtqj" path="res://Sprites/Characters/mudskipper animation copy4.png" id="6_x1sy7"]
 [ext_resource type="Texture2D" uid="uid://lxg4g4n8pejq" path="res://Sprites/Characters/mudskipper idel4.png" id="7_3d8aq"]
@@ -18,9 +17,10 @@
 [ext_resource type="Texture2D" uid="uid://3pyxmveimhp6" path="res://Sprites/Characters/mudskipper animation copy7.png" id="9_bwfjh"]
 [ext_resource type="Texture2D" uid="uid://blc7tjudc5exa" path="res://Sprites/Characters/mudskipper animation copy8.png" id="10_x1sy7"]
 [ext_resource type="Texture2D" uid="uid://bp2qfxufy85un" path="res://Sprites/Characters/mudskipper jump2.png" id="15_8i6g0"]
+[ext_resource type="PackedScene" uid="uid://c860tp2vlumlt" path="res://Scenes/node_2d.tscn" id="18_88tkl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_88tkl"]
-size = Vector2(20, 19.24953)
+size = Vector2(14.058338, 23.32114)
 
 [sub_resource type="Animation" id="Animation_y0ipg"]
 length = 2.0
@@ -99,35 +99,35 @@ font_size = 38
 shadow_size = 6
 shadow_color = Color(0, 0, 0, 0.99215686)
 
-[node name="character" type="CharacterBody2D" groups=["Player"]]
-scale = Vector2(2.4005926, 1.625988)
+[node name="character" type="CharacterBody2D" unique_id=1589983052 groups=["Player"]]
+position = Vector2(0, -21)
+scale = Vector2(1.1812787, 0.8999581)
 script = ExtResource("1_px5sl")
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=377129789]
+position = Vector2(0, 4.9200854)
 scale = Vector2(0.075, 0.087)
 texture = ExtResource("3_c1b4b")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -5.035511)
-scale = Vector2(0.87116444, -2.7596397)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1373512309]
+position = Vector2(-5.0457732e-08, 1.6935921)
+scale = Vector2(0.9634598, -1.7606055)
 shape = SubResource("RectangleShape2D_88tkl")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2028493777]
 zoom = Vector2(3, 3)
 script = ExtResource("2_yxww1")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1675058084]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=343530656]
 root_node = NodePath("../Sprite")
-libraries = {
-&"": SubResource("AnimationLibrary_yxww1")
-}
+libraries/ = SubResource("AnimationLibrary_yxww1")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1701415795]
 script = ExtResource("4_qi5as")
 
-[node name="HealthContainer" type="HBoxContainer" parent="CanvasLayer"]
+[node name="HealthContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=1576359088]
 custom_minimum_size = Vector2(0, 80)
 offset_left = -1.0000153
 offset_top = 1.0000305
@@ -135,22 +135,22 @@ offset_right = 503.0
 offset_bottom = 97.93488
 scale = Vector2(0.92481536, 1.0002061)
 
-[node name="Heart" type="TextureRect" parent="CanvasLayer/HealthContainer"]
+[node name="Heart" type="TextureRect" parent="CanvasLayer/HealthContainer" unique_id=381130746]
 layout_mode = 2
 texture = ExtResource("5_jb3kq")
 expand_mode = 2
 
-[node name="Heart2" type="TextureRect" parent="CanvasLayer/HealthContainer"]
+[node name="Heart2" type="TextureRect" parent="CanvasLayer/HealthContainer" unique_id=868418203]
 layout_mode = 2
 texture = ExtResource("5_jb3kq")
 expand_mode = 2
 
-[node name="Heart3" type="TextureRect" parent="CanvasLayer/HealthContainer"]
+[node name="Heart3" type="TextureRect" parent="CanvasLayer/HealthContainer" unique_id=1595168869]
 layout_mode = 2
 texture = ExtResource("5_jb3kq")
 expand_mode = 2
 
-[node name="ScoreText" type="Label" parent="CanvasLayer"]
+[node name="ScoreText" type="Label" parent="CanvasLayer" unique_id=545073461]
 offset_left = 11.000015
 offset_top = 84.0
 offset_right = 198.00002
@@ -159,5 +159,5 @@ scale = Vector2(1.0858376, 1.3010775)
 text = "Score: 500"
 label_settings = SubResource("LabelSettings_bwfjh")
 
-[node name="Node2D" parent="." instance=ExtResource("6_c1b4b")]
+[node name="Node2D2" parent="." unique_id=44946576 instance=ExtResource("18_88tkl")]
 visible = false
