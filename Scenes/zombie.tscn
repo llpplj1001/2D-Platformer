@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cnyye6yqjko14"]
+[gd_scene format=3 uid="uid://cnyye6yqjko14"]
 
 [ext_resource type="Script" uid="uid://cqksnsreeui5o" path="res://Scenes/zombie.gd" id="1_ogcpr"]
 [ext_resource type="Texture2D" uid="uid://wfuubc8cvlm3" path="res://Sprites/Tiles/gothicvania church files/Assets/SPRITES/burning-ghoul/sprites/v1/burning-ghoul-1.png" id="1_x5rsa"]
