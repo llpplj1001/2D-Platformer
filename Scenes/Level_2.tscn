@@ -406,7 +406,7 @@ scene_to_load = ExtResource("12_v1bqs")
 [node name="Spike" type="Node" parent="." unique_id=1706127495]
 
 [node name="SpikeTrap" parent="Spike" unique_id=564071705 instance=ExtResource("13_v1bqs")]
-position = Vector2(188, -26)
+position = Vector2(539, 16)
 
 [node name="SpikeTrap2" parent="Spike" unique_id=833659910 instance=ExtResource("13_v1bqs")]
 position = Vector2(442, 11)

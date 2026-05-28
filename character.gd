@@ -29,7 +29,6 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 	else:
 		has_double_jumped = false
-	
 	if not is_knocked_back:
 		move_input = Input.get_axis("move_left" , "move_right")
 		
