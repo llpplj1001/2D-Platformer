@@ -6,11 +6,9 @@
 [ext_resource type="Script" uid="uid://cva4i4q883bsl" path="res://Scripts/camera_shake.gd" id="3_x3wgy"]
 [ext_resource type="Script" uid="uid://hfptd803ygap" path="res://Scripts/player_ui.gd" id="4_fkybt"]
 [ext_resource type="Texture2D" uid="uid://miq1be7j6s70" path="res://Sprites/Objects/tile_0044.png" id="4_vgqql"]
-[ext_resource type="PackedScene" uid="uid://c4aoebjj8nhtn" path="res://Scenes/node_2d.tscn" id="7_3smsa"]
+[ext_resource type="PackedScene" uid="uid://c860tp2vlumlt" path="res://Scenes/node_2d.tscn" id="7_3smsa"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
-radius = 11.156403
-height = 22.312805
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3smsa"]
 
 [sub_resource type="Animation" id="Animation_fkybt"]
 length = 0.001
@@ -99,7 +97,7 @@ offset = Vector2(0, -12)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=31095947]
 position = Vector2(0, -13)
 scale = Vector2(0.98598087, -1.1898676)
-shape = SubResource("CapsuleShape2D_cvnsp")
+shape = SubResource("RectangleShape2D_3smsa")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=930518245]
 position = Vector2(0, -28)
@@ -147,4 +145,3 @@ text = "Score: 500"
 label_settings = SubResource("LabelSettings_fkybt")
 
 [node name="Node2D" parent="." unique_id=813601024 instance=ExtResource("7_3smsa")]
-visible = false
