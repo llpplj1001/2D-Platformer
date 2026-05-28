@@ -100,8 +100,8 @@ shadow_size = 6
 shadow_color = Color(0, 0, 0, 0.99215686)
 
 [node name="character" type="CharacterBody2D" unique_id=1589983052 groups=["Player"]]
-position = Vector2(0, -21)
-scale = Vector2(1.1812787, 0.8999581)
+position = Vector2(0, -17)
+scale = Vector2(1.1578298, 0.8278632)
 script = ExtResource("1_px5sl")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=377129789]
@@ -160,4 +160,3 @@ text = "Score: 500"
 label_settings = SubResource("LabelSettings_bwfjh")
 
 [node name="Node2D2" parent="." unique_id=44946576 instance=ExtResource("18_88tkl")]
-visible = false
